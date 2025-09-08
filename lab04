@@ -112,10 +112,14 @@ val4 word 7FFEh
 .code
 main proc
 inc val2
+
 mov ebx,val3
-sub ebx,val1
-mov ebx,val2
-sub ebx,val4
+mov eax,val1
+sub ebx,eax
+
+mov ecx,val2
+mov edx,val4
+sub ebx,edx
 
 call dumpregs
 main endp
