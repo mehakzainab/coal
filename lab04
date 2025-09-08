@@ -58,14 +58,15 @@ call dumpregs
 q4 2)
 include irvine32.inc
 .data
-val1 dword 15h
-val2 byte 57o
+val1 dword 15h;21 in dec
+val2 byte 57q ; 47 in dec
 val3 word 100d
 
 .code
 main proc
 mov eax,val1
-sub eax,val2
+movzx ebx,val2
+sub eax,ebx
 sub eax,64h
 add eax,val3
 call dumpregs
