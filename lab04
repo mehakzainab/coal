@@ -8,15 +8,19 @@ cant add num to num
 
 
 q2)
+q2:
 include irvine32.inc
 .code
 main proc
-mov al,'m'
-mov bl,'e'
-call dumpregs
+mov al,6Dh
+call WriteChar
+mov al, 65h
+call WriteChar
+
 exit
 main endp
 end main
+
 
 q3)
 include irvine32.inc
