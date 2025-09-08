@@ -1,0 +1,125 @@
+move is wrong should be mov
+wrong syntex (inc only increments by 1 not by an arbitrary value)
+mov 10h,ax is wrong should be ax,10h
+different bits hence cant be added
+cant add bx in 5 should be bx,5
+, is missing should be mov eax,45d
+cant add num to num
+
+
+q2)
+include irvine32.inc
+.code
+main proc
+mov al,'m'
+mov bl,'e'
+call dumpregs
+exit
+main endp
+end main
+
+q3)
+include irvine32.inc
+
+.data
+var1 byte +56
+var2 word -300
+var3 dword +500
+.code
+main proc
+mov eax,var1 
+call writeint
+ call crlf
+mov ebx,var2 
+call writeint
+call crlf
+mov ecx,var3 
+call writeint
+call crlf
+
+exit
+main endp
+end main
+
+q4 1)
+ include irvine32.inc
+.data
+.code
+main proc
+mov eax,90
+add eax,65Eh
+sub eax,76o
+sub eax, 45
+add eax, 11010b
+call dumpregs
+
+
+
+q4 2)
+include irvine32.inc
+.data
+val1 dword 15h
+val2 byte 57o
+val3 word 100d
+
+.code
+main proc
+mov eax,val1
+sub eax,val2
+sub eax,64h
+add eax,val3
+call dumpregs
+
+
+q5)
+include irvine32.inc
+.data
+secondsInDay equ 24*60*60
+.code
+main proc
+mov eax, secondsInDay
+call writeint
+call crlf
+exit
+main endp
+end main
+
+q6
+include irvine32.inc
+.data
+ A word  0FF1Ah
+ B word  0EE0Ah
+.code
+main proc
+mov ax,A
+mov bx,B
+xchg ax,bx
+mov eax,ax
+mov ebx,bx
+writeint
+
+exit
+main endp
+end main
+
+q7)
+include irvine32.inc
+.data
+val1 byte 10h
+val2 word 8000h
+val3 dword 0FFFEh
+val4 word 7FFEh
+.code
+main proc
+inc val2
+mov ebx,val3
+sub ebx,val1
+mov ebx,val2
+sub ebx,val4
+
+call dumpregs
+main endp
+end main
+
+
+
